@@ -12,3 +12,16 @@ def division(a, b):
 
 def power(a, b):
     return a ** b
+
+def modulo(a, b):
+    return a % b
+
+def flatDivision(a, b):
+    return a // b
+
+def factorial(x):
+    if x == 0:
+        return 1
+    else:
+        return x * factorial(x-1)
+
