@@ -18,7 +18,7 @@ setup(
     keywords=['math', 'mathematics', 'function', 'functions', 'topology', 'algebra'],
     classifiers=[
         "Development Status :: 1 - Planning",
-        "Intended Audience :: Mathmaticians",
+        "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
