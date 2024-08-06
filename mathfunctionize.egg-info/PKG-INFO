@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: mathfunctionize
+Version: 0.0.1
+Summary: Set of functions to perform mathematical operations.
+Home-page: UNKNOWN
+Author: Daniel Suit
+Author-email: <ds8ds8ds8@outlook.com>
+License: UNKNOWN
+Keywords: math,mathematics,function,functions,topology,algebra
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Mathmaticians
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+A package that allows you to perform advanced mathematical operations.
+
