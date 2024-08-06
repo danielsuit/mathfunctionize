@@ -9,7 +9,7 @@ License: UNKNOWN
 Keywords: math,mathematics,function,functions,topology,algebra
 Platform: UNKNOWN
 Classifier: Development Status :: 1 - Planning
-Classifier: Intended Audience :: Mathmaticians
+Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: Unix
 Classifier: Operating System :: MacOS :: MacOS X
