@@ -24,4 +24,58 @@ def factorial(x):
         return 1
     else:
         return x * factorial(x-1)
-
+def absolute(x):
+    if x < 0:
+        return -x
+    else:
+        return x
+def round(x, place):
+    if (place > 0 and modulo(place, 10) == 0) or (place == 1):
+        if modulo(x, place) < (multiplication(0.5, place)):
+            return flatDivision(x, place)
+    return flatDivision(x, place) + place
+def localMinimum(arr):
+    num = 0
+    pos = []
+    if len(arr) == 1:
+        return [1 , [0]]
+    if len(arr) == 2:
+        if arr[0] < arr[1]:
+            return [1, [0]]
+        if arr[0] > arr[1]:
+            return [1, [1]]
+        return [0, []]
+    for i in range(1, len(arr)-1):
+        if arr[i] < arr[i-1] and arr[i] < arr[i+1]:
+            num += 1
+            pos.append(i)
+    if(arr[0] < arr[1]):
+        num += 1
+        pos.append(0)
+    if(arr[len(arr)-1] < arr[len(arr)-2]):
+        num += 1
+        pos.append(len(arr)-1)
+    return [num, pos]
+def localMaximum(arr):
+    num = 0
+    pos = []
+    if len(arr) == 1:
+        return [1 , [0]]
+    if len(arr) == 2:
+        if arr[0] > arr[1]:
+            return [1, [0]]
+        if arr[0] < arr[1]:
+            return [1, [1]]
+        return [0, []]
+    for i in range(1, len(arr)-1):
+        if arr[i] > arr[i-1] and arr[i] > arr[i+1]:
+            num += 1
+            pos.append(i)
+    if(arr[0] > arr[1]):
+        num += 1
+        pos.append(0)
+    if(arr[len(arr)-1] > arr[len(arr)-2]):
+        num += 1
+        pos.append(len(arr)-1)
+    return [num, pos]
+    
