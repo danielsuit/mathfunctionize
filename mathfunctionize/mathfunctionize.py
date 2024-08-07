@@ -1,3 +1,4 @@
+#arithmetics
 def addition(a, b):
     return a + b
 
@@ -34,6 +35,7 @@ def round(x, place):
         if modulo(x, place) < (multiplication(0.5, place)):
             return flatDivision(x, place)
     return flatDivision(x, place) + place
+# quantitative analysis
 def localMinimum(arr):
     num = 0
     pos = []
