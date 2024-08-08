@@ -12,8 +12,11 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 ## Operations:
 ---
 addition(a, b) - takes two numerical inputs and returns the sum of the two numbers
+
 subtraction(a, b) takes two numerical inputs and returns the number minus the second number
+
 multiplication(a, b) takes two numerical inputs and returns the product of the two numbers
+
 division(a, b) takes two numerical inputs and returns the first number divided by the second number
 
 
