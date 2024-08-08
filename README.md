@@ -1,2 +1,6 @@
 # mathfunctionize
- A python library for math functions in advanced fields of math.
+A python library for math functions in advanced fields of math.
+
+##Getting Started
+---
+
