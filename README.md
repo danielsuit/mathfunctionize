@@ -1,5 +1,5 @@
 # mathfunctionize
-An extensive Python library for math functions in advanced fields of math. Visit [upcoming.md](upcoming.md)
+An extensive Python library for math functions in advanced fields of math. Visit [upcoming.md](upcoming.md) for future functions to be added.
 
 ## Getting Started
 ---
