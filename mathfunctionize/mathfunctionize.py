@@ -80,4 +80,28 @@ def localMaximum(arr):
         num += 1
         pos.append(len(arr)-1)
     return [num, pos]
+def globalMinimum(arr):
+    pos = []
+    if len(arr) == 0:
+        raise Exception("Invalid input")
+    num = arr[0]
+    for i in range(len(arr)):
+        if arr[i] < num:
+            num = arr[i]
+            pos = [i]
+        elif arr[i] == num:
+            pos.append(i)
+    return [num, pos]
+def globalMaximum(arr):
+    pos = []
+    if len(arr) == 0:
+        raise Exception("Invalid input")
+    num = arr[0]
+    for i in range(len(arr)):
+        if arr[i] > num:
+            num = arr[i]
+            pos = [i]
+        elif arr[i] == num:
+            pos.append(i)
+    return [num, pos]
     
