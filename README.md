@@ -18,6 +18,7 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 ```multiplication(a, b)``` - takes two numerical inputs and returns the product of the two numbers
 
 ```division(a, b)``` - takes two numerical inputs and returns the first number divided by the second number
+
 ```power(a, b)```
 
 ```modulo(a, b)```
@@ -26,13 +27,13 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 
 ```factorial(x)```
 
-## mathematics
+## Mathematics
 ---
 ```absolute(x)```
 
 ```round(x, place)```
 
-## quantative analysis
+## Quantative Analysis
 ---
 ```localMinimum(arr)```
 
