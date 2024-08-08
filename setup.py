@@ -7,7 +7,7 @@ LONG_DESCRIPTION = 'A package that allows you to perform advanced mathematical o
 # Setting up
 setup(
     name="mathfunctionize",
-    version=VERSION,
+    version="0.0.2,
     author="Daniel Suit",
     author_email="<ds8ds8ds8@outlook.com>",
     description=DESCRIPTION,
