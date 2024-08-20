@@ -25,6 +25,8 @@ cot()
 
 isMetricSpace()
 
+dist()
+
 ## Calculus
 limit()
 
