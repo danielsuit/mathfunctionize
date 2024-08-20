@@ -58,7 +58,9 @@ isOpenSet()
 
 ## Statistics
 
+nPr()
 
+nCr()
 
 ## Number Theory
 
