@@ -43,4 +43,8 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 
 ```globalMaximum(arr)```
 
+## Statistics
+---
+```mean(arr)```
+
 

@@ -104,4 +104,8 @@ def globalMaximum(arr):
         elif arr[i] == num:
             pos.append(i)
     return [num, pos]
-    
+def mean(arr):
+    total = 0
+    for i in arr:
+        total += i
+    return total / len(arr)
