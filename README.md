@@ -46,5 +46,5 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 ## Statistics
 ---
 ```mean(arr)```
-
+```median()```
 
