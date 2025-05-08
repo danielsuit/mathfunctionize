@@ -46,5 +46,15 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 ## Statistics
 ---
 ```mean(arr)```
-```median()```
+```median(arr)```
+```standardDevation(arr)```
+```mode(arr)```
+
+## Linear Algebra
+```additionMatrix(arr)```
+```subtractionMatrix(arr)```
+```multiplicationMatrix(arr)```
+```determinant(arr)```
+```transpose(arr)```
+
 

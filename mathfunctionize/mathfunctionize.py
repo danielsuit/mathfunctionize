@@ -109,3 +109,89 @@ def mean(arr):
     for i in arr:
         total += i
     return total / len(arr)
+def median(arr):
+    arr.sort()
+    if len(arr) == 0:
+        return
+    if len(arr)%2 == 0:
+        return (arr[int((len(arr)/2))] + arr[int((len(arr)/2))+1]) / 2
+    return arr(int(len(arr)/2))
+def standardDevation(arr):
+    mean = mean(arr)
+    total = 0
+    for i in arr:
+        total += ((i - mean)**2)**(0.5)
+    return total / len(arr)
+def mode(arr):
+    if len(arr) == 0:
+        raise Exception("Invalid input")
+    num = arr[0]
+    count = 1
+    for i in range(len(arr)):
+        if arr.count(arr[i]) > count:
+            count = arr.count(arr[i])
+            num = arr[i]
+    return num
+# matrix
+def additionMatrix(arr1, arr2):
+    if len(arr1) != len(arr2):
+        raise Exception("Invalid input")
+    if len(arr1[0]) != len(arr2[0]):
+        raise Exception("Invalid input")
+    temp = []
+    for i in range(len(arr1)):
+        temp.append([])
+        for j in range(len(arr1[0])):
+            temp[i].append(arr1[i][j] + arr2[i][j])
+    return temp
+def subtractionMatrix(arr1, arr2):
+    if len(arr1) != len(arr2):
+        raise Exception("Invalid input")
+    if len(arr1[0]) != len(arr2[0]):
+        raise Exception("Invalid input")
+    temp = []
+    for i in range(len(arr1)):
+        temp.append([])
+        for j in range(len(arr1[0])):
+            temp[i].append(arr1[i][j] - arr2[i][j])
+    return temp
+def multiplicationMatrix(arr1, arr2):
+    if len(arr1[0]) != len(arr2):
+        raise Exception("Invalid input")
+    temp = []
+    for i in range(len(arr1)):
+        temp.append([])
+        for j in range(len(arr2[0])):
+            total = 0
+            for k in range(len(arr2)):
+                total += arr1[i][k] * arr2[k][j]
+            temp[i].append(total)
+    return temp
+def determinant(arr):
+    if len(arr) == 0:
+        raise Exception("Invalid input")
+    if len(arr) > 1 and len(arr[0]) != len(arr):
+        raise Exception("Invalid input")
+    if len(arr) == 1:
+        return arr[0][0]
+    if len(arr) > 1:
+        total = 0
+        for i in range(len(arr[0])):
+            temp = []
+            for j in range(1, len(arr)):
+                temp.append(arr[j][0:i] + arr[j][i+1:len(arr)])
+            if i % 2 == 0:
+                total += arr[0][i] * determinant(temp)
+            else:
+                total += -1 * (arr[0][i] * determinant(temp))
+        return total
+def transpose(arr):
+    if len(arr) == 0:
+        raise Exception("Invalid input")
+    temp = []
+    for i in range(len(arr[0])):
+        temp.append([])
+        for j in range(len(arr)):
+            temp[i].append(arr[j][i])
+    return temp
+    
