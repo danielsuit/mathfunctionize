@@ -1,0 +1,8 @@
+README.md
+setup.py
+mathfunctionize/__init__.py
+mathfunctionize/mathfunctionize.py
+mathfunctionize.egg-info/PKG-INFO
+mathfunctionize.egg-info/SOURCES.txt
+mathfunctionize.egg-info/dependency_links.txt
+mathfunctionize.egg-info/top_level.txt

@@ -1,1 +1,1 @@
-from mathfunctionize import *
+from .mathfunctionize import *

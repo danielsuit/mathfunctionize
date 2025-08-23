@@ -1,25 +1,20 @@
 #arithmetics
+pi = 3.141592653589793
+e = 2.718281828459045
 def addition(a, b):
     return a + b
-
 def subtraction(a, b):
     return a - b
-
 def multiplication(a, b):
     return a * b
-
 def division(a, b):
     return a / b
-
 def power(a, b):
     return a ** b
-
 def modulo(a, b):
     return a % b
-
 def flatDivision(a, b):
     return a // b
-
 def factorial(x):
     if x == 0:
         return 1
@@ -30,6 +25,12 @@ def absolute(x):
         return -x
     else:
         return x
+def squareRoot(x):
+    return x ** (1/2)
+def cubeRoot(x):
+    return x ** (1/3)
+def nthRoot(x, n):
+    return x ** (1/n)
 def round(x, place):
     if (place > 0 and modulo(place, 10) == 0) or (place == 1):
         if modulo(x, place) < (multiplication(0.5, place)):
@@ -104,6 +105,7 @@ def globalMaximum(arr):
         elif arr[i] == num:
             pos.append(i)
     return [num, pos]
+#statistics
 def mean(arr):
     total = 0
     for i in arr:
@@ -132,7 +134,76 @@ def mode(arr):
             count = arr.count(arr[i])
             num = arr[i]
     return num
-# matrix
+# trigonometrics
+def sin(x):
+    return sine(x)
+def cos(x):
+    return cosine(x)
+def tan(x):
+    return tangent(x)
+def csc(x):
+    return cosecant(x)
+def sec(x):
+    return secant(x)
+def cot(x):
+    return cotangent(x)
+def arcsine(x):
+    if x < -1 or x > 1:
+        raise Exception("Invalid input")
+    return (x + (x**3)/6 + (3*x**5)/40 + (5*x**7)/112 + (35*x**9)/1152)
+def arccosine(x):
+    if x < -1 or x > 1:
+        raise Exception("Invalid input")
+    return (1 - (x**2)/2 + (x**4)/24 - (x**6)/720 + (x**8)/40320)
+def arctangent(x):
+    if x < -1 or x > 1:
+        raise Exception("Invalid input")
+    return (x - (x**3)/3 + (x**5)/5 - (x**7)/7 + (x**9)/9)
+def arccotangent(x):
+    if x == 0:
+        raise Exception("Invalid input")
+    return (1/x - (1/(3*x**3)) + (1/(5*x**5)) - (1/(7*x**7)) + (1/(9*x**9)))
+def arcsecant(x):
+    if x < 1 and x > -1:
+        raise Exception("Invalid input")
+    return (1/x + (1/(3*x**3)) + (1/(5*x**5)) + (1/(7*x**7)) + (1/(9*x**9)))
+def arccosecant(x):
+    if x < 1 and x > -1:
+        raise Exception("Invalid input")
+    return (1/x + (1/(3*x**3)) + (1/(5*x**5)) + (1/(7*x**7)) + (1/(9*x**9)))
+def sine(x):
+    return (x - (x**3)/6 + (x**5)/120 - (x**7)/5040 + (x**9)/362880)
+def cosine(x):
+    return (1 - (x**2)/2 + (x**4)/24 - (x**6)/720 + (x**8)/40320)
+def tangent(x):
+    if cosine(x) == 0:
+        raise Exception("Invalid input")
+    return sine(x) / cosine(x)
+def cotangent(x):
+    if sine(x) == 0:
+        raise Exception("Invalid input")
+    return cosine(x) / sine(x)
+def cosecant(x):
+    if sine(x) == 0:
+        raise Exception("Invalid input")
+    return 1 / sine(x)
+def secant(x):
+    if cosine(x) == 0:
+        raise Exception("Invalid input")
+    return 1 / cosine(x)
+def degreeToRadian(degree):
+    if degree < 0:
+        x = degree // - 360
+        return (degree + (x * 360)) * (pi / 180)
+    if degree > 360:
+        x = degree // 360
+        return (degree - (x * 360)) * (pi / 180)
+    return degree * (pi / 180)
+def radianToDegree(radian):
+    if radian < 0 or radian > (2 * pi):
+        raise Exception("Invalid input")
+    return radian * (180 / pi)
+# linear algebra
 def additionMatrix(arr1, arr2):
     if len(arr1) != len(arr2):
         raise Exception("Invalid input")
@@ -193,5 +264,4 @@ def transpose(arr):
         temp.append([])
         for j in range(len(arr)):
             temp[i].append(arr[j][i])
-    return temp
-    
+    return temp  
