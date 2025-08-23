@@ -25,6 +25,7 @@ def factorial(x):
         return 1
     else:
         return x * factorial(x-1)
+
 def absolute(x):
     if x < 0:
         return -x
@@ -35,6 +36,24 @@ def round(x, place):
         if modulo(x, place) < (multiplication(0.5, place)):
             return flatDivision(x, place)
     return flatDivision(x, place) + place
+# counting
+def permutations(n, r):
+    return division(factorial(n), factorial(n - r))
+
+def circularPermutations(n):
+    if n == 0:
+        return 1
+    return factorial(n - 1)
+
+# def derangements(n):
+#     res = factorial(n)
+#     for i in range(1, n + 1):
+#         res += ((-1) ** i) * permutations(n, i) * derangements(n - i)
+#     return res
+
+def combinations(n, r):
+    return division(permutations(n, r), factorial(r))
+
 # quantitative analysis
 def localMinimum(arr):
     num = 0
