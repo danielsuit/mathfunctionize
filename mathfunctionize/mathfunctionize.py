@@ -20,7 +20,6 @@ def factorial(x):
         return 1
     else:
         return x * factorial(x-1)
-
 def absolute(x):
     if x < 0:
         return -x
@@ -38,14 +37,14 @@ def round(x, place):
             return flatDivision(x, place)
     return flatDivision(x, place) + place
 # counting
+def combinations(n, r):
+    return division(permutations(n, r), factorial(r))
 def permutations(n, r):
     return division(factorial(n), factorial(n - r))
-
 def circularPermutations(n):
     if n == 0:
         return 1
     return factorial(n - 1)
-
 def derangements(n):
     res = 1
     for i in range(1, n+1):
@@ -55,8 +54,9 @@ def derangements(n):
         res += (1 / factorial(i))
     return int(factorial(n) * res)
 
-def combinations(n, r):
-    return division(permutations(n, r), factorial(r))
+# probability
+def bayes_theorem(priorA, priorB, likelihoodA, likelihoodB):
+    return (priorA * likelihoodA) / ((priorA * likelihoodA) + (priorB * likelihoodB))
 
 # quantitative analysis
 def localMinimum(arr):
