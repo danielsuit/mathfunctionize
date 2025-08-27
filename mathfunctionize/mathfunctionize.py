@@ -45,11 +45,14 @@ def circularPermutations(n):
         return 1
     return factorial(n - 1)
 
-# def derangements(n):
-#     res = factorial(n)
-#     for i in range(1, n + 1):
-#         res += ((-1) ** i) * permutations(n, i) * derangements(n - i)
-#     return res
+def derangements(n):
+    res = 1
+    for i in range(1, n+1):
+        if i % 2 != 0:
+            res -= (1 / factorial(i))
+            continue
+        res += (1 / factorial(i))
+    return int(factorial(n) * res)
 
 def combinations(n, r):
     return division(permutations(n, r), factorial(r))
