@@ -138,14 +138,14 @@ def median(arr):
     if len(arr) == 0:
         return
     if len(arr)%2 == 0:
-        return (arr[int((len(arr)/2))] + arr[int((len(arr)/2))+1]) / 2
-    return arr(int(len(arr)/2))
+        return (arr[int((len(arr)/2) - 1)] + arr[int(len(arr)/2)]) / 2
+    return arr[int(len(arr)/2)]
 def standardDevation(arr):
-    mean = mean(arr)
+    m = mean(arr)
     total = 0
     for i in arr:
-        total += ((i - mean)**2)**(0.5)
-    return total / len(arr)
+        total += ((i - m)**2)
+    return (total / len(arr))**0.5
 def mode(arr):
     if len(arr) == 0:
         raise Exception("Invalid input")
