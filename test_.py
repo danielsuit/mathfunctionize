@@ -1,9 +1,7 @@
 import unittest
 import sys
 import os
-
 from mathfunctionize import mathfunctionize
-
 class TestCounting(unittest.TestCase):
     def test_permutations(self):
         self.assertEqual(mathfunctionize.permutations(5, 3), 60)
@@ -17,6 +15,12 @@ class TestCounting(unittest.TestCase):
 
     def test_combinations(self):
         self.assertEqual(mathfunctionize.combinations(5, 3), 10)
+    def test_gamma(self):
+        self.assertEqual(mathfunctionize.gamma(5), 24)
+        self.assertAlmostEqual(mathfunctionize.gamma(5.5), 52.34277778455352, places=5)
+        self.assertAlmostEqual(mathfunctionize.gamma(.5), 1.7724538509055159, places=5)
+        self.assertAlmostEqual(mathfunctionize.gamma(1.5), 0.8862269254527579, places=5)
+        self.assertAlmostEqual(mathfunctionize.gamma(2.5), 1.329340388179137, places=5)
 
 class TestArithmetic(unittest.TestCase):
     def test_addition(self):
