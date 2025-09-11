@@ -721,7 +721,6 @@ def nuclearReactionOptimizationPDF():
     pass
 def quantumBehavioredParticleSwarmPDF():
     pass
-
 # Human-Based Optimization
 def teachingLearningBasedOptimizationPDF():
     pass
@@ -743,6 +742,63 @@ def baseballOptimizationAlgorithmPDF():
     pass
 def goldenBallAlgorithmPDF():
     pass
+#complex numbers
+def complex_addition(a, b):
+    if a.find("+") != -1:
+        a1 = float(a[0:a.find("+")])
+        a2 = float(a[a.find("+")+1:a.find("i")])
+    elif a.find("-", 1) != -1:
+        a1 = float(a[0:a.find("-", 1)])
+        a2 = float(a[a.find("-", 1):a.find("i")])
+    elif a.find("i") != -1:
+        a1 = 0
+        a2 = float(a[0:a.find("i")])
+    elif a.find("i") == -1:
+        a1 = float(a)
+        a2 = 0
+    if b.find("+") != -1:
+        b1 = float(b[0:b.find("+")])
+        b2 = float(b[b.find("+")+1:b.find("i")])
+    elif b.find("-", 1) != -1:
+        b1 = float(b[0:b.find("-", 1)])
+        b2 = float(b[b.find("-", 1):b.find("i")])
+    elif b.find("i") != -1:
+        b1 = 0
+        b2 = float(b[0:b.find("i")])
+    elif b.find("i") == -1:
+        b1 = float(b)
+        b2 = 0
+    if a2 + b2 >= 0:
+        return str(a1 + b1) + "+" + str(a2 + b2)+"i"
+    return str(a1 + b1) + str(a2 + b2)+"i"
+def complex_subtraction(a, b):
+    if a.find("+") != -1:
+        a1 = float(a[0:a.find("+")])
+        a2 = float(a[a.find("+")+1:a.find("i")])
+    elif a.find("-", 1) != -1:
+        a1 = float(a[0:a.find("-", 1)])
+        a2 = float(a[a.find("-", 1):a.find("i")])
+    elif a.find("i") != -1:
+        a1 = 0
+        a2 = float(a[0:a.find("i")])
+    elif a.find("i") == -1:
+        a1 = float(a)
+        a2 = 0
+    if b.find("+") != -1:
+        b1 = float(b[0:b.find("+")])
+        b2 = float(b[b.find("+")+1:b.find("i")])
+    elif b.find("-", 1) != -1:
+        b1 = float(b[0:b.find("-", 1)])
+        b2 = float(b[b.find("-", 1):b.find("i")])
+    elif b.find("i") != -1:
+        b1 = 0
+        b2 = float(b[0:b.find("i")])
+    elif b.find("i") == -1:
+        b1 = float(b)
+        b2 = 0
+    if a2 - b2 >= 0:
+        return str(a1 - b1) + "+" + str(a2 - b2)+"i"
+    return str(a1 - b1) + str(a2 - b2)+"i"
 # quantitative analysis
 def localMinimum(arr):
     num = 0
