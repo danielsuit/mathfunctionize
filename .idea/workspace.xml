@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8979803d-94d4-42d2-a92d-93eb105a9de1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/mathfunctionize/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mathfunctionize/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mathfunctionize/mathfunctionize.py" beforeDir="false" afterPath="$PROJECT_DIR$/mathfunctionize/mathfunctionize.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,16 +20,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/danielsuit/Documents/GitHub/mathfunctionize&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "MFTIONIZE-7-probability-functions",
+    "last_opened_file_path": "/Users/danielsuit/Documents/GitHub/mathfunctionize",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -49,7 +48,11 @@
       <updated>1754359057118</updated>
       <workItem from="1754359058201" duration="85000" />
       <workItem from="1754359152820" duration="18000" />
+<<<<<<< HEAD
+      <workItem from="1761157442386" duration="20000" />
+=======
       <workItem from="1756439414549" duration="601000" />
+>>>>>>> f1b30447c41c5a3802572fe084830133359508b1
     </task>
     <servers />
   </component>
