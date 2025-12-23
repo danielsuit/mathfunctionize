@@ -841,6 +841,27 @@ def mode(arr):
             count = arr.count(arr[i])
             num = arr[i]
     return num
+def variance(arr):
+    m = mean(arr)
+    total = 0
+    for i in arr:
+        total += ((i-m)**2)
+        return total / len(arr)
+# def quartiles(arr):
+#     arr.sort()
+#     if len(arr) == 0:
+#         raise Exception("Invalid input")
+#     Q2 = median(arr)
+#     if len(arr) % 2 == 0:
+#         Q1 = median(arr[0:int(len(arr)/2)])
+#         Q3 = median(arr[int(len(arr)/2):len(arr)])
+#     else:
+#         Q1 = median(arr[0:int(len(arr)/2)])
+#         Q3 = median(arr[int(len(arr)/2)+1:len(arr)])
+#     return [Q1, Q2, Q3]
+# def interquartileRange(arr):
+#     Q1, Q2, Q3 = quartiles(arr)
+#     return Q3 - Q1
 # trigonometrics
 def sin(x):
     return sine(x)
