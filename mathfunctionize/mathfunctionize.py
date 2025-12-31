@@ -18,35 +18,21 @@ def modulo(a, b):
 def flatDivision(a, b):
     return arithmetic.arithmeticFlatDivision(a, b)
 # algebra
+import algebra
 def gamma(x):
-    if x == 0 or (x < 0 and x % 1 == 0):
-        raise Exception("Invalid input")
-    if x == 1:
-        return 1
-    if x == 0.5:
-        return squareRoot(pi)
-    return (x - 1) * gamma(x - 1)
+    return algebra.algebraGamma(x)
 def factorial(x):
-    if x == 0:
-        return 1
-    else:
-        return x * factorial(x-1)
+    return algebra.algebraFactorial(x)
 def absolute(x):
-    if x < 0:
-        return -x
-    else:
-        return x
+    return algebra.algebraAbsolute(x)
 def squareRoot(x):
-    return x ** (1/2)
+    return algebra.algebraSquareRoot(x)
 def cubeRoot(x):
-    return x ** (1/3)
+    return algebra.algebraCubeRoot(x)
 def nthRoot(x, n):
-    return x ** (1/n)
+    return algebra.algebraNthRoot(x, n)
 def round(x, place):
-    if (place > 0 and modulo(place, 10) == 0) or (place == 1):
-        if modulo(x, place) < (multiplication(0.5, place)):
-            return flatDivision(x, place)
-    return flatDivision(x, place) + place
+    return algebra.algebraRound(x, place)
 # counting
 def combinations(n, r):
     return division(permutations(n, r), factorial(r))
