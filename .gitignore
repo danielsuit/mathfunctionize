@@ -1,2 +1,10 @@
 __pycache__/
 *.pyc
+*.swp
+.idea/
+.venv/
+.vscode/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
