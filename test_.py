@@ -24,25 +24,29 @@ class TestCounting(unittest.TestCase):
 
 class TestArithmetic(unittest.TestCase):
     def test_addition(self):
-        self.assertEqual(mathfunctionize.addition(1, 2), 3)
+        self.assertEqual(mathfunctionize.addition([1, 2]), 3)
+        self.assertEqual(mathfunctionize.addition([1, 2, 3]), 6)
 
     def test_subtraction(self):
-        self.assertEqual(mathfunctionize.subtraction(5, 3), 2)
+        self.assertEqual(mathfunctionize.subtraction([5, 3]), 2)
+        self.assertEqual(mathfunctionize.subtraction([10, 3, 2]), 5)
 
     def test_multiplication(self):
-        self.assertEqual(mathfunctionize.multiplication(3, 4), 12)
+        self.assertEqual(mathfunctionize.multiplication([3, 4]), 12)
+        self.assertEqual(mathfunctionize.multiplication([2, 3, 4]), 24)
 
     def test_division(self):
-        self.assertEqual(mathfunctionize.division(10, 2), 5)
+        self.assertEqual(mathfunctionize.division([10, 2]), 5)
+        self.assertEqual(mathfunctionize.division([100, 5, 2]), 10)
 
     def test_power(self):
-        self.assertEqual(mathfunctionize.power(2, 3), 8)
+        self.assertEqual(mathfunctionize.power([2, 3]), 8)
 
     def test_modulo(self):
-        self.assertEqual(mathfunctionize.modulo(10, 3), 1)
+        self.assertEqual(mathfunctionize.modulo([10, 3]), 1)
 
     def test_flatDivision(self):
-        self.assertEqual(mathfunctionize.flatDivision(10, 3), 3)
+        self.assertEqual(mathfunctionize.flatDivision([10, 3]), 3)
 
     def test_factorial(self):
         self.assertEqual(mathfunctionize.factorial(5), 120)

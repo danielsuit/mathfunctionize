@@ -1,43 +1,77 @@
-# contants
+# constants
 pi = 3.141592653589793
 e = 2.718281828459045
-# arithmetics
-import arithmetic
-def addition(a, b):
-    return arithmetic.arithmeticAddition(a, b)
-def subtraction(a, b):
-    return arithmetic.arithmeticSubtraction(a, b)
-def multiplication(a, b):
-    return arithmetic.arithmeticMultiplication(a, b)
-def division(a, b):
-    return arithmetic.arithmeticDivision(a, b)
-def power(a, b):
-    return arithmetic.arithmeticPower(a, b)
-def modulo(a, b):
-    return arithmetic.arithmeticModulo(a, b)
-def flatDivision(a, b):
-    return arithmetic.arithmeticFlatDivision(a, b)
+# arithmetic
+def addition(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result += arr[i]
+    return result
+def subtraction(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result -= arr[i]
+    return result
+def multiplication(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result *= arr[i]
+    return result
+def division(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result /= arr[i]
+    return result
+def power(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result **= arr[i]
+    return result
+def modulo(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result %= arr[i]
+    return result
+def flatDivision(arr):
+    result = arr[0]
+    for i in range(1, len(arr)):
+        result //= arr[i]
+    return result
 # algebra
-import algebra
 def gamma(x):
-    return algebra.algebraGamma(x)
+    if x == 0 or (x < 0 and x % 1 == 0):
+        raise Exception("Invalid input")
+    if x == 1:
+        return 1
+    if x == 0.5:
+        return squareRoot(pi)
+    return (x - 1) * gamma(x - 1)
 def factorial(x):
-    return algebra.algebraFactorial(x)
+    if x == 0:
+        return 1
+    else:
+        return x * factorial(x-1)
 def absolute(x):
-    return algebra.algebraAbsolute(x)
+    if x < 0:
+        return -x
+    else:
+        return x
 def squareRoot(x):
-    return algebra.algebraSquareRoot(x)
+    return x ** (1/2)
 def cubeRoot(x):
-    return algebra.algebraCubeRoot(x)
+    return x ** (1/3)
 def nthRoot(x, n):
-    return algebra.algebraNthRoot(x, n)
+    return x ** (1/n)
 def round(x, place):
-    return algebra.algebraRound(x, place)
+    if (place > 0 and modulo([place, 10]) == 0) or (place == 1):
+        if modulo([x, place]) < (multiplication([0.5, place])):
+            return flatDivision([x, place])
+    return flatDivision([x, place]) + place
 # counting
 def combinations(n, r):
-    return division(permutations(n, r), factorial(r))
+    return division([permutations(n, r), factorial(r)])
 def permutations(n, r):
-    return division(factorial(n), factorial(n - r))
+    return division([factorial(n), factorial(n - r)])
 def circularPermutations(n):
     if n == 0:
         return 1
@@ -74,8 +108,8 @@ def normalCDF(x, mean, stdDev):
         prob = 1 - prob
     return prob
 def gammaPDF(x, a, b):
-    return (1/gamma(a))*power((b*x),(a/x))*power(e,(-b*x))
-#complex numbers
+    return (1/gamma(a))*power([b*x, a/x])*power([e, -b*x])
+# complex numbers
 def complex_addition(a, b):
     if a.find("+") != -1:
         a1 = float(a[0:a.find("+")])
@@ -201,7 +235,7 @@ def globalMaximum(arr):
         elif arr[i] == num:
             pos.append(i)
     return [num, pos]
-#statistics
+# statistics
 def mean(arr):
     total = 0
     for i in arr:
@@ -251,7 +285,7 @@ def variance(arr):
 # def interquartileRange(arr):
 #     Q1, Q2, Q3 = quartiles(arr)
 #     return Q3 - Q1
-# trigonometrics
+# trigonometry
 def sin(x):
     return sine(x)
 def cos(x):
@@ -381,4 +415,4 @@ def transpose(arr):
         temp.append([])
         for j in range(len(arr)):
             temp[i].append(arr[j][i])
-    return temp  
+    return temp
