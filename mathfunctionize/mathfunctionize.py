@@ -285,6 +285,114 @@ def variance(arr):
 # def interquartileRange(arr):
 #     Q1, Q2, Q3 = quartiles(arr)
 #     return Q3 - Q1
+# naive set theory
+def set(arr):
+    result = []
+    for i in arr:
+        if i not in result:
+            result.append(i)
+    return result
+def union(set1, set2):
+    return set(set1 + set2)
+def intersection(set1, set2):
+    result = []
+    for i in set1:
+        if i in set2:
+            result.append(i)
+    return result
+def difference(set1, set2):
+    result = []
+    for i in set1:
+        if i not in set2:
+            result.append(i)
+    return result
+def symmetricDifference(set1, set2):
+    return union(difference(set1, set2), difference(set2, set1))
+def powerSet(set):
+    result = [[]]
+    for i in set:
+        result += [j + [i] for j in result]
+    return result
+def isOpenSet(set, topology):
+    for i in set:
+        if i not in topology:
+            return False
+    return True
+def cartesianProduct(set1, set2):
+    result = []
+    for i in set1:
+        for j in set2:
+            result.append([i, j])
+    return result
+def isMemberOfSet(x, set):
+    return x in set
+def isSubset(set1, set2):
+    for i in set1:
+        if i not in set2:
+            return False
+    return True
+def setEquality(set1, set2):
+    return isSubset(set1, set2) and isSubset(set2, set1)
+def complement(set, universal):
+    return difference(universal, set)
+def cardinality(set):
+    return len(set)
+def isProperSubset(set1, set2):
+    return isSubset(set1, set2) and not setEquality(set1, set2)
+def isSuperset(set1, set2):
+    return isSubset(set2, set1)
+def isProperSuperset(set1, set2):
+    return isSuperset(set1, set2) and not setEquality(set1, set2)
+def isDisjoint(set1, set2):
+    return len(intersection(set1, set2)) == 0
+def isEmpty(set):
+    return len(set) == 0
+# zfc axiomatic set theory
+def extensionality(set1, set2):
+    return setEquality(set1, set2)
+def emptySet():
+    return []
+def pairing(a, b):
+    return [a, b]
+def axiomOfUnion(collection):
+    result = []
+    for s in collection:
+        for i in s:
+            if i not in result:
+                result.append(i)
+    return result
+def separation(set, predicate):
+    result = []
+    for i in set:
+        if predicate(i):
+            result.append(i)
+    return result
+def replacement(set, func):
+    result = []
+    for i in set:
+        val = func(i)
+        if val not in result:
+            result.append(val)
+    return result
+def infinitySet(n):
+    result = []
+    current = []
+    for i in range(n):
+        result.append(current)
+        current = current + [current]
+    return result
+def regularity(set):
+    for i in set:
+        if i == set:
+            return False
+    return True
+def axiomOfChoice(collection):
+    result = []
+    for s in collection:
+        if len(s) == 0:
+            raise Exception("Invalid input")
+        result.append(s[0])
+    return result
 # trigonometry
 def sin(x):
     return sine(x)
@@ -416,3 +524,205 @@ def transpose(arr):
         for j in range(len(arr)):
             temp[i].append(arr[j][i])
     return temp
+# metric spaces
+def dist(x, y, metric="euclidean"):
+    if len(x) != len(y):
+        raise Exception("Invalid input")
+    if metric == "euclidean":
+        total = 0
+        for i in range(len(x)):
+            total += (x[i] - y[i]) ** 2
+        return total ** 0.5
+    elif metric == "manhattan":
+        total = 0
+        for i in range(len(x)):
+            total += absolute(x[i] - y[i])
+        return total
+    elif metric == "chebyshev":
+        maxVal = 0
+        for i in range(len(x)):
+            val = absolute(x[i] - y[i])
+            if val > maxVal:
+                maxVal = val
+        return maxVal
+    else:
+        raise Exception("Invalid metric")
+def isMetricSpace(d, S):
+    for x in S:
+        if d(x, x) != 0:
+            return False
+    for i in range(len(S)):
+        for j in range(len(S)):
+            if i != j:
+                if d(S[i], S[j]) <= 0:
+                    return False
+                if absolute(d(S[i], S[j]) - d(S[j], S[i])) > 1e-10:
+                    return False
+    for i in range(len(S)):
+        for j in range(len(S)):
+            for k in range(len(S)):
+                if d(S[i], S[k]) > d(S[i], S[j]) + d(S[j], S[k]) + 1e-10:
+                    return False
+    return True
+# calculus
+def limit(f, x, a):
+    h = 1e-10
+    left = f(a - h)
+    right = f(a + h)
+    if absolute(left - right) < 1e-6:
+        return (left + right) / 2
+    return None
+def derivative(f, x):
+    h = 1e-10
+    return (f(x + h) - f(x - h)) / (2 * h)
+def concavity(f, x):
+    h = 1e-5
+    secondDerivative = (f(x + h) - 2 * f(x) + f(x - h)) / (h ** 2)
+    if secondDerivative > 1e-6:
+        return "concave up"
+    elif secondDerivative < -1e-6:
+        return "concave down"
+    return "inflection point"
+def integral(f, a, b):
+    n = 1000
+    h = (b - a) / n
+    total = f(a) + f(b)
+    for i in range(1, n):
+        if i % 2 == 0:
+            total += 2 * f(a + i * h)
+        else:
+            total += 4 * f(a + i * h)
+    return total * h / 3
+def continuity(f, x):
+    h = 1e-10
+    try:
+        val = f(x)
+        left = f(x - h)
+        right = f(x + h)
+    except:
+        return False
+    if absolute(left - val) < 1e-6 and absolute(right - val) < 1e-6:
+        return True
+    return False
+# complex analysis
+def conjugate(z):
+    if z.find("+") != -1:
+        real = z[0:z.find("+")]
+        imag = z[z.find("+")+1:z.find("i")]
+        return real + "-" + imag + "i"
+    elif z.find("-", 1) != -1:
+        real = z[0:z.find("-", 1)]
+        imag = z[z.find("-", 1)+1:z.find("i")]
+        return real + "+" + imag + "i"
+    elif z.find("i") != -1:
+        imag = float(z[0:z.find("i")])
+        if imag >= 0:
+            return "0.0-" + str(imag) + "i"
+        return "0.0+" + str(absolute(imag)) + "i"
+    return z
+def rootsOfUnity(n):
+    result = []
+    for k in range(n):
+        angle = 2 * pi * k / n
+        real = cosine(angle)
+        imag = sine(angle)
+        if absolute(real) < 1e-10:
+            real = 0.0
+        if absolute(imag) < 1e-10:
+            imag = 0.0
+        if imag >= 0:
+            result.append(str(real) + "+" + str(imag) + "i")
+        else:
+            result.append(str(real) + str(imag) + "i")
+    return result
+# number theory
+def isPrime(x):
+    if x < 2:
+        return False
+    if x == 2:
+        return True
+    if x % 2 == 0:
+        return False
+    i = 3
+    while i * i <= x:
+        if x % i == 0:
+            return False
+        i += 2
+    return True
+# topology
+def smooth(f, x):
+    for n in range(1, 12):
+        h = 0.1
+        d1 = _nthDerivative(f, x, n, h)
+        d2 = _nthDerivative(f, x, n, h / 2)
+        if absolute(d1) > 1e12 or absolute(d2) > 1e12:
+            return False
+        if absolute(d1) > 1e-6 and absolute((d1 - d2) / d1) > 10:
+            return False
+    return True
+def _nthDerivative(f, x, n, h):
+    if n == 0:
+        return f(x)
+    return (_nthDerivative(f, x + h, n - 1, h) - _nthDerivative(f, x - h, n - 1, h)) / (2 * h)
+# polynomials
+def polyEval(coefficients, x):
+    result = 0
+    for i in range(len(coefficients)):
+        result += coefficients[i] * (x ** (len(coefficients) - 1 - i))
+    return result
+def divide(dividend, divisor):
+    if len(divisor) == 0 or all(c == 0 for c in divisor):
+        raise Exception("Invalid input")
+    quotient = []
+    remainder = list(dividend)
+    while len(remainder) >= len(divisor):
+        coeff = remainder[0] / divisor[0]
+        quotient.append(coeff)
+        for i in range(len(divisor)):
+            remainder[i] -= coeff * divisor[i]
+        remainder.pop(0)
+    return [quotient, remainder]
+def zeros(coefficients):
+    if len(coefficients) == 0:
+        raise Exception("Invalid input")
+    if len(coefficients) == 1:
+        return []
+    if len(coefficients) == 2:
+        return [-coefficients[1] / coefficients[0]]
+    if len(coefficients) == 3:
+        a = coefficients[0]
+        b = coefficients[1]
+        c = coefficients[2]
+        disc = b * b - 4 * a * c
+        if disc > 0:
+            return [(-b + squareRoot(disc)) / (2 * a), (-b - squareRoot(disc)) / (2 * a)]
+        elif disc == 0:
+            return [-b / (2 * a)]
+        else:
+            return []
+    roots = []
+    for candidate in range(-100, 101):
+        if absolute(polyEval(coefficients, candidate)) < 1e-10:
+            if candidate not in roots:
+                roots.append(candidate)
+    return roots
+def factor(coefficients):
+    roots = zeros(coefficients)
+    if len(roots) == 0:
+        return [[coefficients, 1]]
+    result = []
+    remaining = list(coefficients)
+    for r in roots:
+        count = 0
+        while len(remaining) > 1:
+            quot, rem = divide(remaining, [1, -r])
+            if all(absolute(c) < 1e-10 for c in rem):
+                count += 1
+                remaining = quot
+            else:
+                break
+        if count > 0:
+            result.append([[1, -r], count])
+    if len(remaining) > 1 or (len(remaining) == 1 and absolute(remaining[0] - 1) > 1e-10):
+        result.append([remaining, 1])
+    return result

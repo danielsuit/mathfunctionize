@@ -129,6 +129,64 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 
 ```variance(arr)``` - returns the population variance of a list of numbers, measuring how far each value is from the mean
 
+## Naive Set Theory
+---
+```set(arr)``` - removes all duplicate elements from a list and returns a new list containing only unique values in their original order
+
+```union(set1, set2)``` - returns the union of two sets, containing all unique elements that are in either set1 or set2
+
+```intersection(set1, set2)``` - returns the intersection of two sets, containing only the elements present in both set1 and set2
+
+```difference(set1, set2)``` - returns the difference of two sets, containing elements that are in set1 but not in set2
+
+```symmetricDifference(set1, set2)``` - returns the symmetric difference of two sets, containing elements that are in either set but not in both
+
+```powerSet(set)``` - returns the power set of a given set, which is the list of all possible subsets including the empty set
+
+```isOpenSet(set, topology)``` - determines whether a given set is an open set within a specified topology by checking if every element of the set belongs to the topology
+
+```cartesianProduct(set1, set2)``` - returns the Cartesian product of two sets, producing a list of all ordered pairs [a, b] where a is from set1 and b is from set2
+
+```isMemberOfSet(x, set)``` - returns True if element x is a member of the given set, False otherwise
+
+```isSubset(set1, set2)``` - returns True if every element of set1 is also in set2, False otherwise
+
+```setEquality(set1, set2)``` - returns True if both sets contain exactly the same elements, regardless of order
+
+```complement(set, universal)``` - returns the complement of a set with respect to a universal set, containing all elements in the universal set that are not in the given set
+
+```cardinality(set)``` - returns the number of elements in a set
+
+```isProperSubset(set1, set2)``` - returns True if set1 is a subset of set2 but the two sets are not equal
+
+```isSuperset(set1, set2)``` - returns True if every element of set2 is also in set1
+
+```isProperSuperset(set1, set2)``` - returns True if set1 is a superset of set2 but the two sets are not equal
+
+```isDisjoint(set1, set2)``` - returns True if the two sets share no elements in common
+
+```isEmpty(set)``` - returns True if the set contains no elements
+
+## ZFC Axiomatic Set Theory
+---
+```extensionality(set1, set2)``` - verifies the Axiom of Extensionality by checking whether two sets are equal iff they contain exactly the same elements
+
+```emptySet()``` - returns the empty set, affirming the Axiom of Empty Set
+
+```pairing(a, b)``` - returns a set containing exactly two elements a and b, applying the Axiom of Pairing
+
+```axiomOfUnion(collection)``` - takes a list of sets and returns the union of all their elements, applying the Axiom of Union
+
+```separation(set, predicate)``` - returns the subset of elements from a set that satisfy a given predicate function, applying the Axiom of Separation (Specification)
+
+```replacement(set, func)``` - maps a function over a set and returns the set of all outputs with duplicates removed, applying the Axiom of Replacement
+
+```infinitySet(n)``` - returns the first n elements of the von Neumann ordinal construction of the natural numbers, where 0 = [], 1 = [[]], 2 = [[], [[]]], etc., demonstrating the Axiom of Infinity
+
+```regularity(set)``` - verifies the Axiom of Regularity (Foundation) by checking that no element of the set is equal to the set itself, returns True if the axiom holds
+
+```axiomOfChoice(collection)``` - given a collection of non-empty sets, selects one element from each set and returns them as a list, applying the Axiom of Choice
+
 ## Linear Algebra
 ---
 ```additionMatrix(arr1, arr2)``` - adds two matrices of the same dimensions element-wise and returns the resulting matrix
@@ -140,3 +198,45 @@ Functions are able to be used by stating ```mathfunctionize.intendedFunction()``
 ```determinant(arr)``` - computes the determinant of a square matrix using cofactor expansion
 
 ```transpose(arr)``` - returns the transpose of a matrix, swapping rows and columns
+
+## Metric Spaces
+---
+```dist(x, y, metric)``` - computes the distance between two points x and y in n-dimensional space under a specified metric. Supports "euclidean" (default), "manhattan", and "chebyshev"
+
+```isMetricSpace(d, S)``` - determines whether a distance function d satisfies the three metric space axioms (non-negativity with identity of indiscernibles, symmetry, and the triangle inequality) over a set S
+
+## Calculus
+---
+```limit(f, x, a)``` - evaluates the limit of a function f as x approaches a value a using numerical approximation from both sides. Returns None if the two-sided limit does not exist
+
+```derivative(f, x)``` - computes the numerical derivative of a function f at a point x using the central difference method
+
+```concavity(f, x)``` - determines the concavity of a function f at a point x by computing the second derivative. Returns "concave up", "concave down", or "inflection point"
+
+```integral(f, a, b)``` - computes the definite integral of a function f over the interval [a, b] using Simpson's rule
+
+```continuity(f, x)``` - tests whether a function f is continuous at a point x by checking that the left-hand limit, right-hand limit, and function value are all equal. Returns a boolean
+
+## Complex Analysis
+---
+```conjugate(z)``` - returns the complex conjugate of a complex number z represented as a string. For z = "a+bi", returns "a-bi"
+
+```rootsOfUnity(n)``` - computes all n-th roots of unity, returning them as a list of complex number strings evenly spaced on the unit circle
+
+## Number Theory
+---
+```isPrime(x)``` - determines whether a positive integer x is a prime number. Returns a boolean
+
+## Topology
+---
+```smooth(f, x)``` - tests whether a function f appears to be infinitely differentiable (smooth) at a point x by computing successive numerical derivatives and checking for convergence. Returns a boolean
+
+## Polynomials
+---
+```polyEval(coefficients, x)``` - evaluates a polynomial at a given value x, where coefficients are ordered from highest degree to lowest
+
+```divide(dividend, divisor)``` - performs polynomial long division on two polynomials represented by their coefficient lists. Returns [quotient, remainder]
+
+```zeros(coefficients)``` - finds the real roots of a polynomial given its coefficients. Supports linear, quadratic, and higher-degree polynomials via rational root search
+
+```factor(coefficients)``` - factors a polynomial given its coefficients into irreducible factors. Returns a list of [factor, multiplicity] pairs

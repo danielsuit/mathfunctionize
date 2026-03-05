@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.6'
+VERSION = '0.0.7'
 DESCRIPTION = 'Set of functions to perform mathematical operations.'
 LONG_DESCRIPTION = 'A package that allows you to perform advanced mathematical operations.'
 
@@ -16,13 +16,14 @@ setup(
     packages=find_packages(),
     install_requires=[],
     keywords=['math', 'mathematics', 'function', 'functions', 'topology', 'algebra'],
+    license="MIT",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
-        
     ]
 )
