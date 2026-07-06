@@ -6,6 +6,9 @@ research plan for growing `mathfunctionize`. The goal is to deepen the topics
 already present in the library before adding too many new domains, while still
 preserving the long-term direction toward advanced fields of mathematics.
 
+For a professional-scale backlog with at least 100 candidate functions for every
+roadmap topic, see [professional_function_catalog.md](professional_function_catalog.md).
+
 ## Roadmap principles
 
 - Keep the library pure Python and dependency-free unless a future change makes
