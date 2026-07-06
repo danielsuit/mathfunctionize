@@ -19,10 +19,14 @@ class TestUpcomingRoadmapCode(unittest.TestCase):
         self.assertTrue(all(len(names) == 100 for names in catalog_topics.values()))
 
     def test_upcoming_md_function_mentions_are_in_code(self):
-        self.assertTrue(upcoming.is_upcoming_function("gcd"))
-        self.assertTrue(hasattr(mathfunctionize, "gcd"))
+        self.assertTrue(upcoming.is_upcoming_function("sinh"))
+        self.assertTrue(hasattr(mathfunctionize, "sinh"))
         with self.assertRaises(upcoming.UpcomingFunctionNotImplemented):
-            mathfunctionize.gcd(12, 8)
+            mathfunctionize.sinh(1)
+
+    def test_implemented_upcoming_function_runs_real_code(self):
+        self.assertTrue(upcoming.is_upcoming_function("gcd"))
+        self.assertEqual(mathfunctionize.gcd(12, 8), 4)
 
     def test_professional_catalog_function_is_callable_placeholder(self):
         name = "measureTheoryValidateSigmaAlgebra"
