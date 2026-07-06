@@ -726,3 +726,8 @@ def factor(coefficients):
     if len(remaining) > 1 or (len(remaining) == 1 and absolute(remaining[0] - 1) > 1e-10):
         result.append([remaining, 1])
     return result
+
+from .upcoming import install_upcoming_functions as _install_upcoming_functions
+
+_UPCOMING_FUNCTION_NAMES = _install_upcoming_functions(globals(), overwrite=False)
+del _install_upcoming_functions
