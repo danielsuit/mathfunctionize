@@ -1,5 +1,5 @@
 # mathfunctionize [![PyPI Downloads](https://static.pepy.tech/personalized-badge/mathfunctionize?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/mathfunctionize)
-An extensive Python library for math functions in advanced fields of math. Visit [upcoming.md](upcoming.md) for future functions to be added.  
+An extensive Python library for math functions in advanced fields of math. Visit [upcoming.md](upcoming.md) for the research roadmap and [professional_function_catalog.md](professional_function_catalog.md) for the professional API backlog.
 [Website](https://mathfunctionize.web.app/)
 ## Getting Started
 ---
